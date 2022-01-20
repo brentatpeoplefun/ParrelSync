@@ -104,16 +104,13 @@ namespace ParrelSync
             Debug.Log("Library copy: " + cloneProject.libraryPath);
             ClonesManager.CopyDirectoryWithProgressBar(sourceProject.libraryPath, cloneProject.libraryPath,
                 "Cloning Project Library '" + sourceProject.name + "'. ");
-            Debug.Log("Packages copy: " + cloneProject.libraryPath);
-            ClonesManager.CopyDirectoryWithProgressBar(sourceProject.packagesPath, cloneProject.packagesPath,
-              "Cloning Project Packages '" + sourceProject.name + "'. ");
-
 
             //Link Folders
             ClonesManager.LinkFolders(sourceProject.assetPath, cloneProject.assetPath);
             ClonesManager.LinkFolders(sourceProject.projectSettingsPath, cloneProject.projectSettingsPath);
             ClonesManager.LinkFolders(sourceProject.autoBuildPath, cloneProject.autoBuildPath);
             ClonesManager.LinkFolders(sourceProject.localPackages, cloneProject.localPackages);
+            ClonesManager.LinkFolders(sourceProject.packagesPath, cloneProject.packagesPath);
 
             ClonesManager.RegisterClone(cloneProject);
 
@@ -551,6 +548,13 @@ namespace ParrelSync
             /// Copy all files from the source.
             foreach (FileInfo file in source.GetFiles())
             {
+
+                // Ensure file exists before continuing.
+                if (!file.Exists)
+                {
+                    continue;
+                }
+
                 try
                 {
                     file.CopyTo(Path.Combine(destination.ToString(), file.Name), true);
@@ -596,7 +600,7 @@ namespace ParrelSync
                 "Scanning '" + directory.FullName + "'...", 0f);
 
             /// Calculate size of all files in directory.
-            long filesSize = directory.GetFiles().Sum((FileInfo file) => file.Length);
+            long filesSize = directory.GetFiles().Sum((FileInfo file) => file.Exists ? file.Length : 0);
 
             /// Calculate size of all nested directories.
             long directoriesSize = 0;
