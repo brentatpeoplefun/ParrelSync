@@ -36,6 +36,12 @@ namespace ParrelSync.Update
                         messageBody += "There's a newer version available";
                         if(EditorUtility.DisplayDialog("Check for update.", messageBody, "Get latest release", "Close"))
                         {
+                            var manifestPath = System.IO.Path.Combine(Application.dataPath, "..", "Packages", "manifest.json");
+                            var manifest = System.IO.File.ReadAllText(manifestPath);
+                            System.IO.File.WriteAllText(manifestPath, manifest.Replace(
+                                $"https://github.com/brentatpeoplefun/ParrelSync.git?path=/ParrelSync#{localVersionText}",
+                                $"https://github.com/brentatpeoplefun/ParrelSync.git?path=/ParrelSync#{latesteVersionText}"));
+                            
                             Application.OpenURL(ExternalLinks.Releases);
                         }
                     }

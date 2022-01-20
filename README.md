@@ -14,34 +14,11 @@
 2. GUI tools for managing all project clones
 3. Protected assets from being modified by other clone instances
 4. Handy APIs to speed up testing workflows
-## Installation
-
-1. Backup your project folder or use a version control system such as [Git](https://git-scm.com/) or [SVN](https://subversion.apache.org/)
-2. Download .unitypackage from the [latest release](https://github.com/VeriorPies/ParrelSync/releases) and import it to your project. 
-3.  ParrelSync should appreared in the menu item bar after imported
-![UpdateButtonInMenu](https://github.com/VeriorPies/ParrelSync/raw/master/Images/AfterImported.png)  
-
-Check out the [Installation-and-Update](https://github.com/VeriorPies/ParrelSync/wiki/Installation-and-Update) page for more details.
-
 ### UPM Package
-ParrelSync can also be installed via UPM package.  
-After Unity 2019.3.4f1, Unity 2020.1a21, which support path query parameter of git package. You can install ParrelSync by adding the following to Package Manager.
-
+Add the following to Package Manager via git url.
 ```
 https://github.com/brentatpeoplefun/ParrelSync.git?path=/ParrelSync
 ```  
-
-  
-![UPM_Image](https://github.com/brentatpeoplefun/ParrelSync/raw/master/Images/UPM_1.png?raw=true) ![UPM_Image2](https://github.com/brentatpeoplefun/ParrelSync/raw/master/Images/UPM_2.png?raw=true)
-  
-or by adding 
-
-```
-"com.brentatpeoplefun.parrelsync": "https://github.com/brentatpeoplefun/ParrelSync.git?path=/ParrelSync"
-``` 
-
-to the `Packages/manifest.json` file 
-
 
 ## Supported Platform
 Currently, ParrelSync supports Windows, macOS and Linux editors.  
@@ -50,7 +27,6 @@ ParrelSync has been tested with the following Unity version. However, it should 
 * *2020.3.1f1*
 * *2019.3.0f6*
 * *2018.4.22f1*
-
 
 ## APIs
 There's some useful APIs for speeding up the multiplayer testing workflow.
