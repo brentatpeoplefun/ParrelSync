@@ -277,6 +277,7 @@ namespace ParrelSync
             string path = project.projectPath;
             Debug.Log("Creating new empty folder at: " + path);
             Directory.CreateDirectory(path);
+            File.WriteAllText(Path.Combine(path, ".gitignore"), "*");
         }
 
         /// <summary>
