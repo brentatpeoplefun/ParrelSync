@@ -31,16 +31,16 @@ ParrelSync can also be installed via UPM package.
 After Unity 2019.3.4f1, Unity 2020.1a21, which support path query parameter of git package. You can install ParrelSync by adding the following to Package Manager.
 
 ```
-https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync
+https://github.com/brentatpeoplefun/ParrelSync.git?path=/ParrelSync
 ```  
 
   
-![UPM_Image](https://github.com/VeriorPies/ParrelSync/raw/master/Images/UPM_1.png?raw=true) ![UPM_Image2](https://github.com/VeriorPies/ParrelSync/raw/master/Images/UPM_2.png?raw=true)
+![UPM_Image](https://github.com/brentatpeoplefun/ParrelSync/raw/master/Images/UPM_1.png?raw=true) ![UPM_Image2](https://github.com/brentatpeoplefun/ParrelSync/raw/master/Images/UPM_2.png?raw=true)
   
 or by adding 
 
 ```
-"com.veriorpies.parrelsync": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync"
+"com.brentatpeoplefun.parrelsync": "https://github.com/brentatpeoplefun/ParrelSync.git?path=/ParrelSync"
 ``` 
 
 to the `Packages/manifest.json` file 
@@ -65,7 +65,7 @@ if (ClonesManager.IsClone()) {
   // Automatically start server if this is the original editor
 }
 ```
-Check out [the doc](https://github.com/VeriorPies/ParrelSync/wiki/List-of-APIs) to view the complete API list.
+Check out [the doc](https://github.com/brentatpeoplefun/ParrelSync/wiki/List-of-APIs) to view the complete API list.
 
 ## How does it work?
 For each clone instance, ParrelSync will make a copy of the original project folder and reference the ```Asset```, ```Packages``` and ```ProjectSettings``` folder back to the original project with [symbolic link](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink). Other folders such as ```Library```, ```Temp```, and ```obj``` will remain independent for each clone project.
@@ -81,8 +81,8 @@ All clones are placed right next to the original project with suffix *```_clone_
 We have a [Discord server](https://discord.gg/TmQk2qG).
 
 ## Need Help?
-Some common questions and troubleshooting can be found under the [Troubleshooting & FAQs](https://github.com/VeriorPies/ParrelSync/wiki/Troubleshooting-&-FAQs) page.  
-You can also [create a question post](https://github.com/VeriorPies/ParrelSync/issues/new/choose), or ask on [Discord](https://discord.gg/TmQk2qG) if you prefer to have a real-time conversation.
+Some common questions and troubleshooting can be found under the [Troubleshooting & FAQs](https://github.com/brentatpeoplefun/ParrelSync/wiki/Troubleshooting-&-FAQs) page.  
+You can also [create a question post](https://github.com/brentatpeoplefun/ParrelSync/issues/new/choose), or ask on [Discord](https://discord.gg/TmQk2qG) if you prefer to have a real-time conversation.
 
 ## Support this project 
 A star will be appreciated :)
