@@ -10,10 +10,12 @@ namespace ParrelSync
         string rootPath;
         public string assetPath;
         public string projectSettingsPath;
+        public string userSettingsPath;
         public string libraryPath;
         public string packagesPath;
         public string autoBuildPath;
-        public string localPackages;
+        public string localPackagesPath;
+
 
         char[] separator = new char[1] { '/' };
 
@@ -48,12 +50,13 @@ namespace ParrelSync
             newProject.projectPath = projectPath;
             newProject.assetPath = assetPath;
             newProject.projectSettingsPath = projectSettingsPath;
+            newProject.userSettingsPath = userSettingsPath;
             newProject.libraryPath = libraryPath;
             newProject.name = name;
             newProject.separator = separator;
             newProject.packagesPath = packagesPath;
             newProject.autoBuildPath = autoBuildPath;
-            newProject.localPackages = localPackages;
+            newProject.localPackagesPath = localPackagesPath;
 
 
             return newProject;
@@ -82,9 +85,10 @@ namespace ParrelSync
                                  projectPath + "\n" +
                                  assetPath + "\n" +
                                  projectSettingsPath + "\n" +
+                                 userSettingsPath + "\n" +
                                  packagesPath + "\n" +
                                  autoBuildPath + "\n" +
-                                 localPackages + "\n" +
+                                 localPackagesPath + "\n" +
                                  libraryPath;
             return (printString);
         }
@@ -103,10 +107,11 @@ namespace ParrelSync
 
             assetPath = projectPath + "/Assets";
             projectSettingsPath = projectPath + "/ProjectSettings";
+            userSettingsPath = projectPath + "/UserSettings";
             libraryPath = projectPath + "/Library";
             packagesPath = projectPath + "/Packages";
             autoBuildPath = projectPath + "/AutoBuild";
-            localPackages = projectPath + "/LocalPackages";
+            localPackagesPath = projectPath + "/LocalPackages";
         }
     }
 }

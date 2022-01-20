@@ -108,8 +108,9 @@ namespace ParrelSync
             //Link Folders
             ClonesManager.LinkFolders(sourceProject.assetPath, cloneProject.assetPath);
             ClonesManager.LinkFolders(sourceProject.projectSettingsPath, cloneProject.projectSettingsPath);
+            ClonesManager.LinkFolders(sourceProject.userSettingsPath, cloneProject.userSettingsPath);
             ClonesManager.LinkFolders(sourceProject.autoBuildPath, cloneProject.autoBuildPath);
-            ClonesManager.LinkFolders(sourceProject.localPackages, cloneProject.localPackages);
+            ClonesManager.LinkFolders(sourceProject.localPackagesPath, cloneProject.localPackagesPath);
             ClonesManager.LinkFolders(sourceProject.packagesPath, cloneProject.packagesPath);
 
             ClonesManager.RegisterClone(cloneProject);
